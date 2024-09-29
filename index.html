@@ -161,6 +161,10 @@
 					<button class="btn btn-primary" id="wish_message">Happy Birthday</button>
 					<button class="btn btn-primary" id="story">A mesage for you</button>
 					<!-- <button class="btn btn-primary" id="cake_cut">Lrt's Cut the Cake</button> -->
+
+					
+						<button class="btn btn-success" id="refresh-button" style="height:43px; margin-left: 10px;">Restart</button>
+					
 				</div>
 			</div>
 			<!-- <div class="col-md-2">
@@ -190,5 +194,26 @@
   ga('create', 'UA-58229732-1', 'auto');
   ga('send', 'pageview');
 
+</script>
+
+<script>
+function showRefreshButton() {
+    const messageElement = document.querySelector('.message p:last-child'); // Target the specific birthday message
+    const refreshButtonContainer = document.getElementById('refresh-button-container');
+
+    if (messageElement && messageElement.textContent === "a very happy birthday Preeti Halder 👸") {
+        refreshButtonContainer.style.display = 'block'; // Show the refresh button
+    }
+}
+
+
+document.getElementById('refresh-button').addEventListener('click', function() {
+    location.reload(); // Reload the page
+});
+
+
+window.onload = function() {
+    showRefreshButton();
+};
 </script>
 </html>
